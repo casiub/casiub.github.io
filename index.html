@@ -3,28 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PrintForge 3D | Fabricación Aditiva & Prototipado de Precisión</title>
-  <meta name="description" content="Servicio profesional de impresión 3D FDM y resina técnica. Desde prototipos funcionales hasta series cortas y repuestos a medida. Cotización en menos de 2h.">
+  <title>PrintForge 3D | Fabricación Aditiva con Bambu Lab A1 & AMS</title>
+  <meta name="description" content="Servicio profesional de impresión 3D FDM de alta velocidad y multicolor con Bambu Lab A1 y sistema AMS. Prototipos funcionales, fibra de carbono y piezas finales en 24/48h.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #090d16;
       --surface: #111827;
-      --surface-card: #162032;
-      --surface-hover: #1e2c45;
+      --surface-card: #151f32;
+      --surface-hover: #1c2a44;
       --border: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(249, 115, 22, 0.3);
+      --border-accent: rgba(249, 115, 22, 0.35);
       --primary: #f97316;
       --primary-hover: #ea580c;
-      --primary-glow: rgba(249, 115, 22, 0.25);
+      --primary-glow: rgba(249, 115, 22, 0.28);
       --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
       --text: #f8fafc;
       --text-muted: #94a3b8;
       --text-dim: #64748b;
       --green: #10b981;
-      --radius: 14px;
+      --radius: 16px;
     }
 
     * {
@@ -44,8 +45,8 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 15% 15%, rgba(249, 115, 22, 0.07) 0%, transparent 40%),
-        radial-gradient(circle at 85% 65%, rgba(56, 189, 248, 0.06) 0%, transparent 40%);
+        radial-gradient(circle at 10% 15%, rgba(249, 115, 22, 0.09) 0%, transparent 45%),
+        radial-gradient(circle at 90% 45%, rgba(56, 189, 248, 0.08) 0%, transparent 45%);
     }
 
     /* Navegación */
@@ -53,14 +54,14 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(9, 13, 22, 0.85);
+      background: rgba(9, 13, 22, 0.88);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
       padding: 1rem 2rem;
     }
 
     .nav-container {
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -79,10 +80,10 @@
     }
 
     .logo-cube {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       background: linear-gradient(135deg, var(--primary) 0%, #fb923c 100%);
-      border-radius: 8px;
+      border-radius: 9px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -90,8 +91,8 @@
     }
 
     .logo-cube svg {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       fill: #ffffff;
     }
 
@@ -120,8 +121,8 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.6rem;
-      border-radius: 10px;
+      padding: 0.8rem 1.65rem;
+      border-radius: 11px;
       font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
@@ -138,7 +139,7 @@
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 28px -2px rgba(249, 115, 22, 0.4);
+      box-shadow: 0 12px 28px -2px rgba(249, 115, 22, 0.45);
     }
 
     .btn-secondary {
@@ -149,22 +150,33 @@
 
     .btn-secondary:hover {
       background: var(--surface-hover);
-      border-color: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.2);
       transform: translateY(-2px);
     }
 
-    /* Contenedor general */
     .container {
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* Hero Section */
+    /* Hero Section con imagen integrada */
     .hero {
-      padding: 6rem 0 4rem 0;
-      text-align: center;
-      position: relative;
+      padding: 5rem 0 3.5rem 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
     }
 
     .badge-pill {
@@ -178,8 +190,7 @@
       border-radius: 9999px;
       font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 1.75rem;
-      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
     }
 
     .badge-pill .pulse {
@@ -197,14 +208,11 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-size: clamp(2.3rem, 4.2vw, 3.8rem);
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 1.25rem;
     }
 
     .hero h1 span.gradient {
@@ -214,22 +222,84 @@
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 700px;
-      margin: 0 auto 2.5rem auto;
+      margin-bottom: 2rem;
       line-height: 1.6;
     }
 
     .hero-actions {
       display: flex;
-      justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
     }
 
-    /* Stats Grid */
+    /* Tarjeta visual de la Bambu Lab A1 */
+    .hero-image-card {
+      position: relative;
+      background: var(--surface-card);
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7), 0 0 40px -10px var(--primary-glow);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .hero-image-card img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-image-card:hover img {
+      transform: scale(1.02);
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(9, 13, 22, 0.95) 0%, rgba(9, 13, 22, 0.4) 70%, transparent 100%);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .hero-badge-tag {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--green);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-image-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .hero-image-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Stats Bar */
     .stats-bar {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -238,7 +308,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.75rem;
-      backdrop-filter: blur(10px);
+      margin-top: 3.5rem;
     }
 
     .stat-item {
@@ -246,7 +316,7 @@
     }
 
     .stat-number {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       font-weight: 800;
       color: #ffffff;
       font-family: 'JetBrains Mono', monospace;
@@ -259,14 +329,14 @@
       font-weight: 500;
     }
 
-    /* Secciones Generales */
+    /* Secciones */
     section {
       padding: 5rem 0;
     }
 
     .section-header {
       text-align: center;
-      max-width: 700px;
+      max-width: 740px;
       margin: 0 auto 3.5rem auto;
     }
 
@@ -291,6 +361,104 @@
       font-size: 1.05rem;
     }
 
+    /* Galería de Producción con Imágenes Reales */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .gallery-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(249, 115, 22, 0.4);
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6);
+    }
+
+    .gallery-img-wrapper {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background: #0b1120;
+    }
+
+    .gallery-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-card:hover .gallery-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .gallery-tag-pill {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(9, 13, 22, 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .gallery-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .gallery-body h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .gallery-body p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+      line-height: 1.5;
+    }
+
+    .gallery-features {
+      list-style: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 1rem;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    .gallery-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .gallery-features li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: bold;
+    }
+
     /* Grid de Servicios */
     .services-grid {
       display: grid;
@@ -304,7 +472,6 @@
       border-radius: var(--radius);
       padding: 2rem;
       transition: all 0.3s ease;
-      position: relative;
       display: flex;
       flex-direction: column;
     }
@@ -356,13 +523,13 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Calculadora Interactiva de Presupuesto */
+    /* Calculadora Interactiva */
     .calculator-wrapper {
-      background: linear-gradient(135deg, rgba(22, 32, 50, 0.9) 0%, rgba(17, 24, 39, 0.95) 100%);
+      background: linear-gradient(135deg, rgba(21, 31, 50, 0.95) 0%, rgba(17, 24, 39, 0.98) 100%);
       border: 1px solid var(--border-accent);
-      border-radius: 20px;
+      border-radius: 22px;
       padding: 3rem;
-      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 40px -10px var(--primary-glow);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7), 0 0 45px -10px var(--primary-glow);
     }
 
     .calc-layout {
@@ -433,17 +600,16 @@
     .calc-result-box {
       background: #0b1120;
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 18px;
       padding: 2.25rem;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 100%;
     }
 
     .calc-result-title {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--text-muted);
@@ -451,7 +617,7 @@
     }
 
     .calc-price {
-      font-size: 3.5rem;
+      font-size: 3.4rem;
       font-weight: 800;
       color: #ffffff;
       font-family: 'JetBrains Mono', monospace;
@@ -462,14 +628,14 @@
     .calc-subprice {
       font-size: 0.85rem;
       color: var(--text-dim);
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
 
     .calc-details-list {
       text-align: left;
       font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
       padding-top: 1rem;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
@@ -480,7 +646,7 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Catálogo de Materiales */
+    /* Materiales */
     .materials-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -493,7 +659,6 @@
       border-radius: var(--radius);
       padding: 1.5rem;
       text-align: left;
-      position: relative;
     }
 
     .material-badge {
@@ -537,12 +702,11 @@
       font-weight: bold;
     }
 
-    /* Proceso */
+    /* Pasos */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
-      position: relative;
     }
 
     .step-card {
@@ -551,17 +715,16 @@
       border-radius: var(--radius);
       padding: 2rem 1.5rem;
       text-align: center;
-      position: relative;
     }
 
     .step-num {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       background: linear-gradient(135deg, var(--primary) 0%, #ea580c 100%);
       color: #ffffff;
       font-family: 'JetBrains Mono', monospace;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -587,7 +750,7 @@
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 3rem;
-      max-width: 800px;
+      max-width: 820px;
       margin: 0 auto;
     }
 
@@ -604,12 +767,12 @@
 
     .upload-zone:hover {
       border-color: var(--primary);
-      background: rgba(249, 115, 22, 0.04);
+      background: rgba(249, 115, 22, 0.05);
     }
 
     .upload-zone svg {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       color: var(--primary);
       margin-bottom: 0.75rem;
     }
@@ -652,7 +815,7 @@
       font-size: 0.82rem;
     }
 
-    /* Modal de notificación ficticia */
+    /* Notificación Toast */
     .toast {
       position: fixed;
       bottom: 2rem;
@@ -686,67 +849,153 @@
         PrintForge 3D
       </a>
       <ul class="nav-links">
+        <li><a href="#galeria">Equipamiento & Piezas</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#calculadora">Calculadora</a></li>
         <li><a href="#materiales">Materiales</a></li>
-        <li><a href="#proceso">Proceso</a></li>
-        <li><a href="#contacto" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.88rem;">Pedir Cotización</a></li>
+        <li><a href="#contacto" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.88rem;">Pedir Cotización</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section con la Bambu Lab A1 -->
   <div class="container">
     <header class="hero">
-      <div class="badge-pill">
-        <span class="pulse"></span>
-        Granja de Impresión 3D de Alta Velocidad y Precisión
-      </div>
-      <h1>
-        Fabricamos tus piezas en 3D.<br>
-        <span class="gradient">Desde el diseño CAD hasta tus manos.</span>
-      </h1>
-      <p>
-        Servicio profesional de fabricación aditiva FDM y resina técnica. Prototipado ultrarrápido, repuestos a medida y series cortas de producción en 24/48 horas.
-      </p>
+      <div class="hero-grid">
+        <div>
+          <div class="badge-pill">
+            <span class="pulse"></span>
+            Bambu Lab A1 + AMS Lite Multi-Material Activo
+          </div>
+          <h1>
+            Fabricación 3D de alta velocidad.<br>
+            <span class="gradient">Precisión dimensional y hasta 4 colores.</span>
+          </h1>
+          <p>
+            Impresión 3D profesional con tecnología de compensación activa de flujo, cama PEI texturizada y sistema AMS automático. Prototipos funcionales, fibra de carbono y piezas finales en 24/48 horas.
+          </p>
 
-      <div class="hero-actions">
-        <a href="#calculadora" class="btn btn-primary">
-          Calcular Presupuesto Online
-          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#contacto" class="btn btn-secondary">Subir Archivo 3D (STL/STEP)</a>
+          <div class="hero-actions">
+            <a href="#calculadora" class="btn btn-primary">
+              Calcular Presupuesto Online
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#galeria" class="btn btn-secondary">Ver Piezas Terminadas</a>
+          </div>
+        </div>
+
+        <!-- Tarjeta destacada con la foto de la Bambu Lab A1 -->
+        <div class="hero-image-card">
+          <img src="./assets/bambu-a1-ams.jpg" alt="Bambu Lab A1 con sistema AMS Lite imprimiendo piezas de ingeniería">
+          <div class="hero-image-overlay">
+            <div>
+              <div class="hero-badge-tag">
+                <span style="width: 6px; height: 6px; background: var(--green); border-radius: 50%;"></span>
+                Online & Imprimiendo
+              </div>
+              <div class="hero-image-title">Bambu Lab A1 + AMS Lite</div>
+              <div class="hero-image-sub">Calibración automática y flujo continuo 500 mm/s</div>
+            </div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #fb923c; font-weight: 700;">
+              0.08mm layer
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Métricas -->
       <div class="stats-bar">
         <div class="stat-item">
-          <div class="stat-number">+2.500</div>
-          <div class="stat-label">Piezas fabricadas</div>
+          <div class="stat-number">4 Colores</div>
+          <div class="stat-label">Soporte AMS Lite automático</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">±0.08mm</div>
-          <div class="stat-label">Precisión dimensional</div>
+          <div class="stat-label">Tolerancia mecánica</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">500 mm/s</div>
+          <div class="stat-label">Velocidad con control de resonancia</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">&lt; 24h</div>
-          <div class="stat-label">Tiempo de despacho exprés</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Materiales de grado técnico</div>
+          <div class="stat-label">Despacho exprés disponible</div>
         </div>
       </div>
     </header>
   </div>
+
+  <!-- Galería de Casos Reales e Imágenes de Producción -->
+  <section id="galeria" style="background: rgba(11, 17, 32, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Galería de Producción</div>
+        <h2 class="section-title">Equipamiento real, acabados de ingeniería</h2>
+        <p class="section-desc">Echa un vistazo a nuestra máquina en funcionamiento y a las piezas técnicas que salen directamente de la cama de impresión.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Foto 1: Bambu Lab A1 en acción -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper">
+            <span class="gallery-tag-pill">HARDWARE • BAMBU LAB A1</span>
+            <img src="./assets/bambu-a1-ams.jpg" alt="Bambu Lab A1 3D Printer con AMS Lite" loading="lazy">
+          </div>
+          <div class="gallery-body">
+            <h3>Bambu Lab A1 con AMS Lite</h3>
+            <p>Cabezal de extrusión directa de alta aceleración con sensor de corrientes parásitas para compensación activa de flujo en tiempo real sobre cama PEI dorada.</p>
+            <ul class="gallery-features">
+              <li>4 bobinas en AMS Lite con cambio automático</li>
+              <li>Compensación activa de vibraciones (Input Shaping)</li>
+              <li>Boquillas de cambio rápido en acero templado</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Foto 2: Piezas mecánicas terminadas -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper">
+            <span class="gallery-tag-pill">PIEZAS MECÁNICAS • PETG-CF</span>
+            <img src="./assets/finished-parts.jpg" alt="Piezas mecánicas impresas en 3D con fibra de carbono y engranajes helicoidales" loading="lazy">
+          </div>
+          <div class="gallery-body">
+            <h3>Piezas Técnicas y Fibra de Carbono</h3>
+            <p>Engranajes helicoidales sin holgura, brazos para drones y robótica en PETG-CF negro mate y carcasas con inserciones roscadas de latón termoselladas.</p>
+            <ul class="gallery-features">
+              <li>Acabado superficial mate con líneas de capa invisibles</li>
+              <li>Inserciones roscadas M3, M4 y M5 instaladas en caliente</li>
+              <li>Excelente rigidez torsional y resistencia térmica</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Foto 3: Showcase multicolor -->
+        <div class="gallery-card">
+          <div class="gallery-img-wrapper">
+            <span class="gallery-tag-pill">MULTICOLOR • AMS LITE</span>
+            <img src="./assets/multicolor-showcase.jpg" alt="Pieza técnica con múltiples colores nítidos fabricada con AMS" loading="lazy">
+          </div>
+          <div class="gallery-body">
+            <h3>Prototipos Multicolor Funcionales</h3>
+            <p>Fabricación de ensambles articulados y señalética técnica con transiciones nítidas entre naranja de seguridad, grafito y blanco, sin sangrado de color.</p>
+            <ul class="gallery-features">
+              <li>Líneas de corte limpias entre diferentes filamentos</li>
+              <li>Ideal para logotipos integrados, paneles e indicadores</li>
+              <li>Ahorro en pintura y posprocesado secundario</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Sección de Servicios -->
   <section id="servicios">
     <div class="container">
       <div class="section-header">
         <div class="section-tag">Capacidades de Fabricación</div>
-        <h2 class="section-title">Soluciones para cada etapa de tu proyecto</h2>
-        <p class="section-desc">Tanto si eres un ingeniero validando un mecanismo como si necesitas una tirada de 100 carcasas personalizadas.</p>
+        <h2 class="section-title">Soluciones adaptadas a cada necesidad</h2>
+        <p class="section-desc">Desde un prototipo único para validar tu idea hasta tiradas de producción sin costes de moldes.</p>
       </div>
 
       <div class="services-grid">
@@ -780,7 +1029,7 @@
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
           <h3>Piezas Técnicas y Repuestos</h3>
-          <p>Replicamos piezas descatalogadas, engranajes y componentes sometidos a fricción, impacto o rayos UV.</p>
+          <p>Replicamos piezas descatalogadas, engranajes y componentes sometidos a fricción, impacto o intemperie.</p>
           <div class="service-tags">
             <span class="tag">Fibra Carbono</span>
             <span class="tag">ASA / ABS</span>
@@ -793,7 +1042,7 @@
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
           </div>
           <h3>Ingeniería Inversa & CAD</h3>
-          <p>¿Solo tienes la pieza rota? Escaneamos, rediseñamos o adaptamos tu modelo para optimizar su fabricación aditiva (DfAM).</p>
+          <p>¿Solo tienes la pieza rota? Escaneamos, rediseñamos o adaptamos tu modelo para optimizar su fabricación aditiva.</p>
           <div class="service-tags">
             <span class="tag">Optimización DfAM</span>
             <span class="tag">STEP / CAD</span>
@@ -803,7 +1052,7 @@
     </div>
   </section>
 
-  <!-- Calculadora Interactiva de Presupuesto Estimado -->
+  <!-- Calculadora Interactiva de Presupuesto -->
   <section id="calculadora">
     <div class="container">
       <div class="section-header">
@@ -814,7 +1063,6 @@
 
       <div class="calculator-wrapper">
         <div class="calc-layout">
-          <!-- Controles de la calculadora -->
           <div class="calc-controls">
             <div class="calc-form-group">
               <label class="calc-label" for="material">Material de fabricación</label>
@@ -854,7 +1102,6 @@
             </div>
           </div>
 
-          <!-- Resultado del cálculo -->
           <div class="calc-result-box">
             <div class="calc-result-title">Estimación total (IVA incl.)</div>
             <div class="calc-price" id="totalPrice">€34.50</div>
@@ -890,7 +1137,7 @@
       <div class="section-header">
         <div class="section-tag">Calidad Industrial</div>
         <h2 class="section-title">Gama de Materiales Técnicos</h2>
-        <p class="section-desc">Seleccionamos polímeros vírgenes de los mejores fabricantes para garantizar repetibilidad y solidez mecánica.</p>
+        <p class="section-desc">Seleccionamos filamentos de primera calidad con tolerancias de diámetro de ±0.02mm para una extrusión impecable.</p>
       </div>
 
       <div class="materials-grid">
@@ -977,7 +1224,7 @@
         <div class="step-card">
           <div class="step-num">3</div>
           <h4>Impresión y Acabado</h4>
-          <p>Fabricación en impresoras de alta precisión con control de temperatura en cámara cerrada.</p>
+          <p>Fabricación en nuestra Bambu Lab A1 con control dinámico de flujo y cama PEI.</p>
         </div>
 
         <div class="step-card">
@@ -1000,7 +1247,6 @@
 
       <div class="contact-card">
         <form id="quoteForm" onsubmit="handleFormSubmit(event)">
-          <!-- Zona interactiva de arrastre de archivo -->
           <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
             <div class="upload-text" id="uploadFilename">Arrastra tu archivo 3D o haz clic para seleccionarlo</div>
@@ -1021,7 +1267,7 @@
 
           <div style="margin-bottom: 1.5rem;">
             <label class="calc-label" for="contactMessage">Detalles adicionales del proyecto</label>
-            <textarea id="contactMessage" rows="4" placeholder="Indica requisitos mecánicos, color deseado, tolerancia requerida o si necesitas ayuda con el modelado CAD..."></textarea>
+            <textarea id="contactMessage" rows="4" placeholder="Indica requisitos mecánicos, color deseado, número de unidades o si necesitas ayuda con el diseño CAD..."></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.05rem; padding: 1rem;">
@@ -1043,8 +1289,8 @@
             </div>
             PrintForge 3D
           </a>
-          <p style="max-width: 380px; color: var(--text-dim); font-size: 0.88rem;">
-            Taller especializado en prototipado rápido y fabricación aditiva técnica. Calidad garantizada pieza a pieza.
+          <p style="max-width: 400px; color: var(--text-dim); font-size: 0.88rem;">
+            Fabricación aditiva y prototipado rápido con tecnología Bambu Lab A1 y sistema multicolor AMS Lite. Calidad y precisión en cada capa.
           </p>
         </div>
 
@@ -1052,9 +1298,9 @@
           <div>
             <h5 style="color: #ffffff; margin-bottom: 0.75rem; font-size: 0.95rem;">Tecnologías</h5>
             <p style="color: var(--text-dim); font-size: 0.85rem; line-height: 1.8;">
-              FDM Alta Velocidad<br>
-              Resina SLA / MSLA<br>
-              Ingeniería Inversa
+              Bambu Lab A1 FDM<br>
+              AMS Lite 4 Colores<br>
+              PETG-CF Fibra Carbono
             </p>
           </div>
           <div>
@@ -1069,7 +1315,7 @@
       </div>
 
       <div class="footer-copy">
-        © 2026 PrintForge 3D • Diseñado & alojado en GitHub Pages (casiub.github.io)
+        © 2026 PrintForge 3D • Fabricación con Bambu Lab A1 & AMS Lite • Alojado en GitHub Pages (casiub.github.io)
       </div>
     </div>
   </footer>
